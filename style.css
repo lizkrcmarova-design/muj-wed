@@ -1,0 +1,1022 @@
+/* ========================================================
+   SubKultura — Hlavní stylesheet
+   Studentský projekt — čisté CSS bez frameworků
+   Autor: SubKultura studentský projekt
+   ======================================================== */
+
+
+/* --- Import Google Fonts ---
+   Oswald: tučné nadpisy (punk/metal styl)
+   Roboto: čitelný text pro obsah */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap');
+
+
+/* ========================================================
+   CSS PROMĚNNÉ — barvy, písma, mezery
+   Změnou hodnot zde upravíš celý web najednou
+   ======================================================== */
+:root {
+    /* --- Barvy --- */
+    --bg:           #0d0d0d;    /* Hlavní tmavé pozadí */
+    --bg-card:      #181818;    /* Pozadí karet a sekcí */
+    --bg-header:    #111111;    /* Pozadí záhlaví */
+    --bg-footer:    #0a0a0a;    /* Pozadí patičky */
+    --text:         #e8e8e8;    /* Hlavní text — světlý */
+    --text-muted:   #888888;    /* Tlumený text (popis, datum...) */
+    --accent:       #cc0000;    /* Červená akcentní barva */
+    --accent-hover: #ff2222;    /* Světlejší červená při hover */
+    --border:       #2a2a2a;    /* Barva ohraničení */
+    --white:        #ffffff;    /* Čistě bílá (pro nadpisy) */
+
+    /* --- Písma --- */
+    --font-heading: 'Oswald', sans-serif;    /* Nadpisy */
+    --font-body:    'Roboto', sans-serif;    /* Běžný text */
+
+    /* --- Maximální šířka obsahu --- */
+    --max-width: 1200px;
+}
+
+
+/* ========================================================
+   ZÁKLADNÍ RESET — smaže výchozí styly prohlížeče
+   ======================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;  /* Ohraničení a výplň jsou součástí rozměrů */
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ========================================================
+   ZÁKLADNÍ STYLY — aplikují se na celou stránku
+   ======================================================== */
+html {
+    scroll-behavior: smooth; /* Plynulé skrolování po kliknutí na kotvu */
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    /* Flexbox zajistí, že patička bude vždy dole */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hlavní obsah se roztáhne, patička zůstane dole */
+main {
+    flex: 1;
+}
+
+/* Obrázky se nepřetékají přes rodičovský prvek */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Základní styl odkazů */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+/* Odebrání výchozích odrážek ze seznamů */
+ul {
+    list-style: none;
+}
+
+
+/* ========================================================
+   KONTEJNER — centruje obsah a omezuje jeho šířku
+   ======================================================== */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+
+/* ========================================================
+   SEKCE — základní odsazení sekcí stránky
+   ======================================================== */
+.section {
+    padding: 5rem 0;
+}
+
+/* Tmavší varianta sekce (alternuje se základní) */
+.section--dark {
+    background-color: var(--bg-card);
+}
+
+
+/* ========================================================
+   ZÁHLAVÍ SEKCÍ — nadpis a popisek sekce
+   ======================================================== */
+.section__header {
+    margin-bottom: 2.5rem;
+}
+
+.section__title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+}
+
+/* Akcentní barva pro část nadpisu — používá se uvnitř <span> */
+.section__title span {
+    color: var(--accent);
+}
+
+/* Dekorační červená čára pod nadpisem */
+.section__title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent);
+    margin-top: 0.6rem;
+}
+
+.section__subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 600px;
+}
+
+
+/* ========================================================
+   TLAČÍTKA
+   ======================================================== */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+    line-height: 1;
+}
+
+/* Plné červené tlačítko */
+.btn--primary {
+    background-color: var(--accent);
+    color: var(--white);
+    border-color: var(--accent);
+}
+
+.btn--primary:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: var(--white);
+}
+
+/* Obrysové tlačítko (jen ohraničení) */
+.btn--outline {
+    background-color: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.btn--outline:hover {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+
+/* ========================================================
+   ZÁHLAVÍ (HEADER) — navigační lišta
+   ======================================================== */
+.header {
+    background-color: var(--bg-header);
+    border-bottom: 2px solid var(--accent); /* Červená linka dole */
+    position: sticky;    /* Záhlaví se přilepí nahoře při scrollování */
+    top: 0;
+    z-index: 1000;       /* Záhlaví je nad ostatním obsahem */
+}
+
+/* Vnitřní layout záhlaví — logo vlevo, nav vpravo */
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    position: relative;  /* Potřebné pro mobilní dropdown */
+}
+
+/* Odkaz s logem */
+.header__logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* Obrázek loga v záhlaví */
+.header__logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Navigační seznam — vodorovný na desktopu */
+.header__nav-list {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Jednotlivé navigační odkazy */
+.header__nav-link {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.3rem 0;
+    border-bottom: 2px solid transparent; /* Rezerva pro podtržení */
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.header__nav-link:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* Aktivní stránka — červené podtržení a barva */
+.header__nav-link--active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* Hamburger tlačítko — zobrazí se jen na mobilu */
+.hamburger {
+    display: none;  /* Skrytý na desktopu */
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+}
+
+/* Jednotlivé čárky hamburger tlačítka */
+.hamburger__line {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--text);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animace hamburger → X při otevřeném menu */
+.hamburger--active .hamburger__line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger--active .hamburger__line:nth-child(2) {
+    opacity: 0;
+}
+.hamburger--active .hamburger__line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ========================================================
+   PATIČKA (FOOTER)
+   ======================================================== */
+.footer {
+    background-color: var(--bg-footer);
+    border-top: 2px solid var(--border);
+    padding: 4rem 0 2rem;
+    margin-top: auto;
+}
+
+/* Třísloupcový grid patičky */
+.footer__content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Logo v patičce */
+.footer__logo-img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 0.75rem;
+}
+
+/* Slogan pod logem */
+.footer__tagline {
+    font-family: var(--font-heading);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Nadpisy sloupců patičky */
+.footer__heading {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+/* Navigační odkazy v patičce */
+.footer__links-list li {
+    margin-bottom: 0.5rem;
+}
+
+.footer__links-list a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer__links-list a:hover {
+    color: var(--accent);
+}
+
+/* Kontaktní text v patičce */
+.footer__contact-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.9;
+    font-style: normal; /* Odebrání kurzívy z <address> */
+}
+
+/* Oddělovací čára */
+.footer__divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+}
+
+/* Copyright text */
+.footer__copy {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+
+/* ========================================================
+   HERO SEKCE — velký uvítací banner na hlavní stránce
+   ======================================================== */
+.hero {
+    background-color: var(--bg);
+    /* Jemný tečkovaný vzor jako textura pozadí */
+    background-image: radial-gradient(circle, #222222 1px, transparent 1px);
+    background-size: 24px 24px;
+    padding: 7rem 0 6rem;
+    border-bottom: 2px solid var(--border);
+}
+
+/* Obsah hero sekce */
+.hero__content {
+    max-width: 720px;
+}
+
+/* Malý popisek nad hlavním nadpisem */
+.hero__eyebrow {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+/* Hlavní nadpis — velký a výrazný */
+.hero__title {
+    font-family: var(--font-heading);
+    /* clamp: min 2.8rem, ideálně 7vw, max 5rem — responzivní velikost */
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+/* Červené zvýraznění v nadpisu — třída .accent */
+.hero__title .accent {
+    color: var(--accent);
+}
+
+/* Popisný text pod nadpisem */
+.hero__text {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+/* Tlačítka v hero sekci */
+.hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap; /* Na mobilu se zalamují pod sebe */
+}
+
+
+/* ========================================================
+   KARTY — přehled kategorií na hlavní stránce
+   ======================================================== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 1.75rem;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px); /* Karta se trochu "zdvihne" */
+}
+
+/* Nadpis karty s // před textem (dekorace přes CSS) */
+.card__title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+}
+
+.card__title::before {
+    content: '// ';
+    color: var(--accent);
+}
+
+/* Text karty */
+.card__text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* Odkaz "Zobrazit produkty" v kartě */
+.card__link {
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 1px;
+    transition: color 0.2s ease;
+}
+
+.card__link:hover {
+    color: var(--accent-hover);
+}
+
+
+/* ========================================================
+   PROČ SI VYBRAT NÁS — tři výhody/body
+   ======================================================== */
+.features__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.feature {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+}
+
+/* Velké číslo (01, 02, 03) vedle textu */
+.feature__number {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    min-width: 3rem;
+    opacity: 0.35; /* Průhledné — dekorativní */
+}
+
+.feature__title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.feature__text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+
+/* ========================================================
+   ZÁHLAVÍ PODSTRÁNEK (PAGE HERO) — tmavší banner s nadpisem
+   ======================================================== */
+.page-hero {
+    background-color: var(--bg-card);
+    padding: 3rem 0;
+    border-bottom: 2px solid var(--border);
+}
+
+.page-hero__title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--white);
+}
+
+.page-hero__title span {
+    color: var(--accent);
+}
+
+.page-hero__subtitle {
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+
+/* ========================================================
+   PRODUKTY — mřížka produktových karet
+   ======================================================== */
+
+/* Kategorie produktů — nadpis + mřížka */
+.products-category {
+    margin-bottom: 3.5rem;
+}
+
+/* Nadpis kategorie s červenou podtržením */
+.category-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--white);
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+/* Mřížka produktů — responzivní */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Produktová karta */
+.product-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.product-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+/* Placeholder obrázku produktu — šedý čtverec */
+.product-card__img {
+    width: 100%;
+    aspect-ratio: 1;           /* Čtvercový poměr stran */
+    background-color: #222222;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Tělo karty — text a cena */
+.product-card__body {
+    padding: 1rem 1.25rem 1.25rem;
+}
+
+/* Malý popisek kategorie v kartě */
+.product-card__category {
+    font-size: 0.7rem;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+}
+
+/* Název produktu */
+.product-card__name {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+/* Popis produktu */
+.product-card__desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Spodní část karty — cena a tlačítko */
+.product-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border);
+    padding-top: 0.75rem;
+}
+
+/* Cena produktu — červená */
+.product-card__price {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+/* Tlačítko "Přidat do košíku" */
+.product-card__btn {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: var(--accent);
+    color: var(--white);
+    border: none;
+    padding: 0.4rem 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.product-card__btn:hover {
+    background-color: var(--accent-hover);
+}
+
+
+/* ========================================================
+   O FIRMĚ — příběh a tým
+   ======================================================== */
+
+/* Odstavce příběhu firmy */
+.about-story p {
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    line-height: 1.85;
+}
+
+.about-story p:last-child {
+    margin-bottom: 0;
+}
+
+/* Zvýraznění v textu */
+.about-story strong {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+/* Mřížka členů týmu */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Karta člena týmu */
+.team-member {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 1.75rem 1.5rem;
+    text-align: center;
+    transition: border-color 0.2s ease;
+}
+
+.team-member:hover {
+    border-color: var(--accent);
+}
+
+/* Avatar — šedý čtverec s iniciálami (bez fotky) */
+.team-member__avatar {
+    width: 88px;
+    height: 88px;
+    background-color: #222222;
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.team-member__name {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+}
+
+.team-member__role {
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.85rem;
+}
+
+.team-member__bio {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+}
+
+
+/* ========================================================
+   KONTAKT — formulář a informace
+   ======================================================== */
+
+/* Dvousloupcový layout kontaktu */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+/* Formulář — svislý sloupec */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Skupina formulářového pole (label + input) */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+/* Popisky formuláře */
+.form-label {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text);
+}
+
+/* Textová pole formuláře */
+.form-input,
+.form-textarea {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.75rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+    width: 100%;
+}
+
+/* Zvýraznění aktivního pole */
+.form-input:focus,
+.form-textarea:focus {
+    border-color: var(--accent);
+}
+
+/* Textarea — výška pro více řádků textu */
+.form-textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+/* Jednotlivé položky kontaktních informací */
+.contact-info__item {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-info__item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Popisek (e-mail, telefon...) */
+.contact-info__label {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+}
+
+/* Hodnota kontaktního údaje */
+.contact-info__value {
+    color: var(--text);
+    font-size: 0.95rem;
+    font-style: normal;
+    line-height: 1.6;
+}
+
+/* Poznámka pod formulářem */
+.form-disclaimer {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+/* Placeholder mapy — šedý obdélník */
+.map-placeholder {
+    width: 100%;
+    height: 220px;
+    background-color: #1e1e1e;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 2rem;
+}
+
+
+/* ========================================================
+   RESPONZIVNÍ STYLY — přizpůsobení pro menší obrazovky
+   ======================================================== */
+
+/* --- Tablet (šířka do 900px) --- */
+@media (max-width: 900px) {
+
+    /* Footer — ze tří sloupců na jeden */
+    .footer__content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Kontakt — z dvou sloupců na jeden */
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}
+
+/* --- Tablet / Mobil (šířka do 768px) --- */
+@media (max-width: 768px) {
+
+    /* Zobrazí hamburger tlačítko */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Navigace se skryje — zobrazí se jako dropdown přes JS */
+    .header__nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;          /* Hned pod záhlavím */
+        left: 0;
+        right: 0;
+        background-color: var(--bg-header);
+        border-top: 1px solid var(--border);
+        border-bottom: 2px solid var(--accent);
+        padding: 0.5rem 0;
+        gap: 0;
+    }
+
+    /* Třída přidávaná přes JS — zobrazí menu */
+    .header__nav-list--open {
+        display: flex;
+    }
+
+    /* Mobilní navigační odkaz */
+    .header__nav-link {
+        display: block;
+        padding: 0.9rem 1.5rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .header__nav-link:last-child {
+        border-bottom: none;
+    }
+
+    /* Sekce — menší odsazení */
+    .section {
+        padding: 3.5rem 0;
+    }
+
+    /* Hero — menší odsazení */
+    .hero {
+        padding: 4rem 0 3.5rem;
+    }
+
+    /* Footer */
+    .footer__content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Mobil (šířka do 500px) --- */
+@media (max-width: 500px) {
+
+    .section {
+        padding: 2.5rem 0;
+    }
+
+    .section__title {
+        font-size: 1.8rem;
+    }
+
+    .hero {
+        padding: 3rem 0 2.5rem;
+    }
+
+    /* Produkty — dva sloupce i na malém mobilu */
+    .products-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Tým — dva sloupce */
+    .team-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Tlačítka v hero na celou šířku */
+    .hero__actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        text-align: center;
+    }
+}
