@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <!-- Kódování znaků — VŽDY první tag v <head> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SubKultura — e-shop s hudebním příslušenstvím a oblečením pro punk, rock, metal, DNB a techno.">
+    <title>Produkty — SubKultura</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ZÁHLAVÍ — stejné na všech stránkách
+         Aktivní odkaz: Produkty
+         ===================================================== -->
+    <header class="header">
+        <div class="header__inner">
+
+            <a href="index.html" class="header__logo-link" aria-label="SubKultura — zpět na hlavní stránku">
+                <img src="1.jpg" alt="Logo SubKultura" class="header__logo-img">
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Otevřít navigační menu" aria-expanded="false">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+
+            <nav aria-label="Hlavní navigace">
+                <ul class="header__nav-list" id="nav-list">
+                    <li><a href="index.html" class="header__nav-link">Domů</a></li>
+                    <li><a href="o-firme.html" class="header__nav-link">O firmě</a></li>
+                    <!-- Aktivní odkaz na této stránce: Produkty -->
+                    <li><a href="produkty.html" class="header__nav-link header__nav-link--active">Produkty</a></li>
+                    <li><a href="kontakt.html" class="header__nav-link">Kontakt</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- =====================================================
+             ZÁHLAVÍ STRÁNKY PRODUKTŮ
+             ===================================================== -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-hero__title">Naše <span>produkty</span></h1>
+                <p class="page-hero__subtitle">
+                    Hudební příslušenství a oblečení pro všechny, kdo žijí subkulturou.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             SEZNAM PRODUKTŮ — rozděleno do dvou kategorií
+             ===================================================== -->
+        <section class="section">
+            <div class="container">
+
+
+                <!-- ===========================================
+                     KATEGORIE 1: HUDEBNÍ PŘÍSLUŠENSTVÍ
+                     Struny, trsátka, paličky a další doplňky
+                     =========================================== -->
+                <div class="products-category">
+
+                    <h2 class="category-title">Hudební příslušenství</h2>
+
+                    <!-- Mřížka produktů — 4 sloupce na desktopu, méně na mobilu -->
+                    <div class="products-grid">
+
+                        <!-- Produkt 1: Elektrické struny -->
+                        <article class="product-card">
+                            <!-- Placeholder místo skutečné fotografie produktu -->
+                            <div class="product-card__img" role="img" aria-label="Foto produktu: Elektrické struny RIOT 10-46">
+                                [ foto produktu ]
+                            </div>
+                            <div class="product-card__body">
+                                <p class="product-card__category">Struny</p>
+                                <h3 class="product-card__name">Elektrické struny RIOT 10-46</h3>
+                                <p class="product-card__desc">
+                                    Niklové wound struny pro elektrickou kytaru. Tuhost 10-46,
+                                    vhodné pro rock, punk a metal. Balení 6 strun.
+                                </p>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">199 Kč</span>
+                                    <!-- Nefunkční tlačítko — jen HTML ukázka -->
+                                    <button class="product-card__btn" type="button">Do košíku</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Produkt 2: Basové struny -->
+                        <article class="product-card">
+                            <div class="product-card__img" role="img" aria-label="Foto produktu: Basové struny THUNDER 45-105">
+                                [ foto produktu ]
+                            </div>
+                            <div class="product-card__body">
+                                <p class="product-card__category">Struny</p>
+                                <h3 class="product-card__name">Basové struny THUNDER 45-105</h3>
+                                <p class="product-card__desc">
+                                    Roundwound basové struny ze slinuté oceli. Sada 4 strun,
+                                    tuhost 45-105. Silný útok, ideální pro metal a punk.
+                                </p>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">249 Kč</span>
+                                    <button class="product-card__btn" type="button">Do košíku</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Produkt 3: Sada trsátek -->
+                        <article class="product-card">
+                            <div class="product-card__img" role="img" aria-label="Foto produktu: Trsátka SubKultura Heavy sada 12 ks">
+                                [ foto produktu ]
+                            </div>
+                            <div class="product-card__body">
+                                <p class="product-card__category">Trsátka</p>
+                                <h3 class="product-card__name">Trsátka Heavy — sada 12 ks</h3>
+                                <p class="product-card__desc">
+                                    Celuloidová trsátka tloušťky 1,0 mm. Sada 12 kusů
+                                    s potiskem SubKultura. Vhodná pro agresivní hru.
+                                </p>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">149 Kč</span>
+                                    <button class="product-card__btn" type="button">Do košíku</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Produkt 4: Limitované trsátko -->
+                        <article class="product-card">
+                            <div class="product-card__img" role="img" aria-label="Foto produktu: Trsátko Metal Skull limitovaná edice">
+                                [ foto produktu ]
+                            </div>
+                            <div class="product-card__body">
+                                <p class="product-card__category">Trsátka — limitka</p>
+                                <h3 class="product-card__name">Metal Skull — limitovaná edice</h3>
+                                <p class="product-card__desc">
+                                    Prémiové trsátko z tvrzeného nylonu, 1,2 mm.
+                                    Design s lebkou — limitovaná série 500 ks. Certifikát
+                                    pravosti součástí balení.
+                                </p>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">59 Kč</span>
+                                    <button class="product-card__btn" type="button">Do košíku</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Produkt 5: Paličky -->
+                        <article class="product-card">
+                            <div class="product-card__img" role="img" aria-label="Foto produktu: Bubenické paličky DrumCore 5A">
+                                [ foto produktu ]
+                            </div>
+                            <div class="product-card__body">
+                                <p class="product-card__category">Paličky</p>
+                                <h3 class="product-card__name">Paličky DrumCore 5A</h3>
+                                <p class="product-card__desc">
+                                    Hikoriové paličky velikosti 5A s nylonovou špičkou.
+                                    Vhodné pro rock, metal i DNB. Pár (2 ks).
+                                </p>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">299 Kč</span>
+                                    <button class="product-card__btn" type="button">Do košíku</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Produkt 6: Kapodaster -->
+                        <article class="product-card">
+                            <div class="product-card__img" role="img" aria-label="Foto produktu: Kapodaster Riot Capo">
+                                [ foto produktu ]
+                            </div>
+                            <div class="product-card__body">
+                                <p class="product-card__category">Kytarové doplňky</p>
+                                <h3 class="product-card__name">Kapodaster Riot Capo</h3>
+                                <p class="product-card__desc">
+                                    Hliníkový kapodaster s rychloupínacím mechanismem.
+                                    Vhodný pro akustické i elektrické kytary. Černý mat.
+                                </p>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">179 Kč</span>
+                                    <button class="product-card__btn" type="button">Do košíku</button>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                    <!-- Konec: mřížka hudebního příslušenství -->
+
+                </div>
+                <!-- Konec: kategorie Hudební příslušenství -->
+
+
+                <!-- ===========================================
+                     KATEGORIE 2: OBLEČENÍ A MÓDNÍ DOPLŇKY
+                     Trička, mikiny, čepice, náramky, nášivky
+                     =========================================== -->
+                <div class="products-category">
+
+                    <h2 class="category-title">Oblečení &amp; Módní doplňky</h2>
+
+                    <div class="products-grid">
+
+                        <!-- Produkt 7: Tričko Punk Not Dead -->
+                        <article class="product-card">
+                            <div class="product-card__img" role="img" aria-label="Foto produktu: Tričko Punk Not Dead">
+                                [ foto produktu ]
+                            </div>
+                            <div class="product-card__body">
+                                <p class="product-card__category">Tričko</p>
+                                <h3 class="product-card__name">Tričko &quot;PUNK NOT DEAD&quot;</h3>
+                                <p class="product-card__desc">
+                                    100% bavlna, gramáž 180 g/m². Černo-bílý potisk,
+                                    unisex střih. Dostupné ve velikostech S–3XL.
+                                </p>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">499 Kč</span>
+                                    <button class="product-card__btn" type="button">Do košíku</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Produkt 8: Tričko Metal Core -->
+                        <article class="product-card">
+                            <div class="product-card__img" role="img" aria-label="Foto produktu: Tričko Metal Core">
+                                [ foto produktu ]
+                            </div>
+                            <div class="product-card__body">
+                                <p class="product-card__category">Tričko</p>
+                                <h3 class="product-card__name">Tričko &quot;METAL CORE&quot;</h3>
+                                <p class="product-card__desc">
+                                    Potisk s industriálním designem. Černé tričko,
+                                    bílý a červený tisk, 100% bavlna. Velikosti S–2XL.
+                                </p>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">499 Kč</span>
+                                    <button class="product-card__btn" type="button">Do košíku</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Produkt 9: Mikina SubKultura -->
+                        <article class="product-card">
+                            <div class="product-card__img" role="img" aria-label="Foto produktu: Mikina SubKultura s kapucí">
+                                [ foto produktu ]
+                            </div>
+                            <div class="product-card__body">
+                                <p class="product-card__category">Mikina</p>
+                                <h3 class="product-card__name">Mikina SubKultura — Hoodie</h3>
+                                <p class="product-card__desc">
+                                    Těžká mikina s kapucí, 320 g/m². Výšivka loga
+                                    SubKultura na hrudi. Unisex, černá. Velikosti S–3XL.
+                                </p>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">799 Kč</span>
+                                    <button class="product-card__btn" type="button">Do košíku</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Produkt 10: Mikina Techno Nation -->
+                        <article class="product-card">
+                            <div class="product-card__img" role="img" aria-label="Foto produktu: Mikina Techno Nation">
+                                [ foto produktu ]
+                            </div>
+                            <div class="product-card__body">
+                                <p class="product-card__category">Mikina</p>
+                                <h3 class="product-card__name">Mikina &quot;TECHNO NATION&quot;</h3>
+                                <p class="product-card__desc">
+                                    Bez kapuce, s potiskem na zádech inspirovaným
+                                    berlínskou techno scénou. Tmavě šedá, 280 g/m².
+                                    Velikosti XS–2XL.
+                                </p>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">849 Kč</span>
+                                    <button class="product-card__btn" type="button">Do košíku</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Produkt 11: Beanie čepice DNB -->
+                        <article class="product-card">
+                            <div class="product-card__img" role="img" aria-label="Foto produktu: Beanie DNB čepice">
+                                [ foto produktu ]
+                            </div>
+                            <div class="product-card__body">
+                                <p class="product-card__category">Doplňky — čepice</p>
+                                <h3 class="product-card__name">Beanie &quot;DNB&quot;</h3>
+                                <p class="product-card__desc">
+                                    Pletená čepice beanie s vyšitým logem DNB.
+                                    Akrylový materiál, one size. Dostupná v černé
+                                    a tmavě červené barvě.
+                                </p>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">349 Kč</span>
+                                    <button class="product-card__btn" type="button">Do košíku</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Produkt 12: Kožený náramek -->
+                        <article class="product-card">
+                            <div class="product-card__img" role="img" aria-label="Foto produktu: Kožený náramek s nýty">
+                                [ foto produktu ]
+                            </div>
+                            <div class="product-card__body">
+                                <p class="product-card__category">Doplňky — náramky</p>
+                                <h3 class="product-card__name">Kožený náramek s nýty</h3>
+                                <p class="product-card__desc">
+                                    Náramek z pravé kůže s kovovými nýty, kovová spona.
+                                    Šířka 3 cm. Velikosti S/M a L/XL. Klasika punkového stylu.
+                                </p>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">249 Kč</span>
+                                    <button class="product-card__btn" type="button">Do košíku</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Produkt 13: Nášivky -->
+                        <article class="product-card">
+                            <div class="product-card__img" role="img" aria-label="Foto produktu: Sada textilních nášivek">
+                                [ foto produktu ]
+                            </div>
+                            <div class="product-card__body">
+                                <p class="product-card__category">Doplňky — nášivky</p>
+                                <h3 class="product-card__name">Textilní nášivky — sada 5 ks</h3>
+                                <p class="product-card__desc">
+                                    Sada 5 různých nášivek s motivy punk, metal a techno
+                                    subkultur. Žehlitelné i šitelné. Každá sada je
+                                    unikátní kombinace designů.
+                                </p>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">199 Kč</span>
+                                    <button class="product-card__btn" type="button">Do košíku</button>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                    <!-- Konec: mřížka oblečení a doplňků -->
+
+                </div>
+                <!-- Konec: kategorie Oblečení a módní doplňky -->
+
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         PATIČKA — stejná na všech stránkách
+         ===================================================== -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer__content">
+
+                <div>
+                    <a href="index.html" aria-label="SubKultura — domovská stránka">
+                        <img src="1.jpg" alt="Logo SubKultura" class="footer__logo-img">
+                    </a>
+                    <p class="footer__tagline">Žij hlasitě.</p>
+                </div>
+
+                <div>
+                    <h3 class="footer__heading">Stránky</h3>
+                    <ul class="footer__links-list">
+                        <li><a href="index.html">Domů</a></li>
+                        <li><a href="o-firme.html">O firmě</a></li>
+                        <li><a href="produkty.html">Produkty</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__heading">Kontakt</h3>
+                    <address class="footer__contact-text">
+                        info@subkultura.cz<br>
+                        +420 777 123 456<br>
+                        Korunní 15, 120 00 Praha 2
+                    </address>
+                </div>
+
+            </div>
+
+            <hr class="footer__divider">
+
+            <p class="footer__copy">
+                &copy; 2026 SubKultura. Jedná se o fiktivní studentský projekt. SubKultura není reálná firma.
+            </p>
+
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

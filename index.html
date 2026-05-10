@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <!-- Kódování znaků — VŽDY první tag v <head>, aby se diakritika zobrazovala správně -->
+    <meta charset="UTF-8">
+    <!-- Viewport — zajistí správné zobrazení na mobilních zařízeních -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Popis stránky pro vyhledávače -->
+    <meta name="description" content="SubKultura — e-shop s hudebním příslušenstvím a oblečením pro fanoušky punk, rock, metal, DNB a techno.">
+    <!-- Název stránky zobrazený v záložce prohlížeče -->
+    <title>SubKultura — Hudba &amp; Styl</title>
+    <!-- Odkaz na hlavní stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts: Oswald (nadpisy) + Roboto (text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ZÁHLAVÍ — přilepeno nahoře, zobrazuje se na všech stránkách
+         Vlevo: logo, vpravo: navigační menu
+         ===================================================== -->
+    <header class="header">
+        <div class="header__inner">
+
+            <!-- Logo — kliknutím se vrátíme na hlavní stránku -->
+            <a href="index.html" class="header__logo-link" aria-label="SubKultura — zpět na hlavní stránku">
+                <img src="1.jpg" alt="Logo SubKultura" class="header__logo-img">
+            </a>
+
+            <!-- Hamburger tlačítko — zobrazí se jen na mobilních zařízeních -->
+            <button class="hamburger" id="hamburger" aria-label="Otevřít navigační menu" aria-expanded="false">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+
+            <!-- Hlavní navigace -->
+            <nav aria-label="Hlavní navigace">
+                <ul class="header__nav-list" id="nav-list">
+                    <!-- Aktivní stránka má třídu header__nav-link--active -->
+                    <li><a href="index.html" class="header__nav-link header__nav-link--active">Domů</a></li>
+                    <li><a href="o-firme.html" class="header__nav-link">O firmě</a></li>
+                    <li><a href="produkty.html" class="header__nav-link">Produkty</a></li>
+                    <li><a href="kontakt.html" class="header__nav-link">Kontakt</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =====================================================
+         HLAVNÍ OBSAH STRÁNKY
+         ===================================================== -->
+    <main>
+
+        <!-- =====================================================
+             HERO SEKCE — velký uvítací banner
+             Obsahuje: nadpis, slogan, popis a tlačítka
+             ===================================================== -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+
+                    <!-- Malý popisek nad hlavním nadpisem -->
+                    <p class="hero__eyebrow">Punk &middot; Rock &middot; Metal &middot; DNB &middot; Techno</p>
+
+                    <!-- Hlavní nadpis stránky — slogan firmy -->
+                    <h1 class="hero__title">Žij <span class="accent">Hlasitě.</span></h1>
+
+                    <!-- Krátký popis firmy -->
+                    <p class="hero__text">
+                        Hudební příslušenství a oblečení pro ty, kdo žijí subkulturou.
+                        Struny, paličky, trsátka, trička a mikiny — vše pro fanoušky
+                        punk, rock, metal, DNB a techno na jednom místě.
+                    </p>
+
+                    <!-- Výzvy k akci — tlačítka -->
+                    <div class="hero__actions">
+                        <a href="produkty.html" class="btn btn--primary">Prozkoumat produkty</a>
+                        <a href="o-firme.html" class="btn btn--outline">O nás</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             PŘEHLED KATEGORIÍ — co v obchodě nabízíme
+             Čtyři karty s popisem kategorií zboží
+             ===================================================== -->
+        <section class="section">
+            <div class="container">
+
+                <!-- Nadpis sekce -->
+                <div class="section__header">
+                    <h2 class="section__title">Co <span>nabízíme</span></h2>
+                    <p class="section__subtitle">
+                        Vybíráme jen to, co skutečně odpovídá duchu subkultur, které milujeme.
+                    </p>
+                </div>
+
+                <!-- Mřížka karet — 4 kategorie -->
+                <div class="cards-grid">
+
+                    <!-- Karta 1: Kytarové příslušenství -->
+                    <article class="card">
+                        <h3 class="card__title">Kytarové příslušenství</h3>
+                        <p class="card__text">
+                            Struny, trsátka, kapodastery a další doplňky pro elektrické
+                            i akustické kytaristy. Od lehkého rocku až po brutální metal.
+                        </p>
+                        <a href="produkty.html" class="card__link">Zobrazit produkty</a>
+                    </article>
+
+                    <!-- Karta 2: Bicí příslušenství -->
+                    <article class="card">
+                        <h3 class="card__title">Bicí příslušenství</h3>
+                        <p class="card__text">
+                            Paličky pro každý žánr — od klasického rocku přes thrash metal
+                            až po rychlé drum and bass a techno beaty.
+                        </p>
+                        <a href="produkty.html" class="card__link">Zobrazit produkty</a>
+                    </article>
+
+                    <!-- Karta 3: Oblečení -->
+                    <article class="card">
+                        <h3 class="card__title">Oblečení</h3>
+                        <p class="card__text">
+                            Trička a mikiny s potisky inspirovanými světem punk, metal,
+                            techno a DNB. Nosíš to, čemu věříš.
+                        </p>
+                        <a href="produkty.html" class="card__link">Zobrazit produkty</a>
+                    </article>
+
+                    <!-- Karta 4: Módní doplňky -->
+                    <article class="card">
+                        <h3 class="card__title">Módní doplňky</h3>
+                        <p class="card__text">
+                            Beanie čepice, kožené náramky, nášivky a další kousky,
+                            které doladí tvůj styl a dají o tobě jasný signál.
+                        </p>
+                        <a href="produkty.html" class="card__link">Zobrazit produkty</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             PROČ SI VYBRAT NÁS — tři klíčové výhody
+             ===================================================== -->
+        <section class="section section--dark">
+            <div class="container">
+
+                <!-- Nadpis sekce -->
+                <div class="section__header">
+                    <h2 class="section__title">Proč <span>SubKultura?</span></h2>
+                </div>
+
+                <!-- Tři výhody -->
+                <div class="features__grid">
+
+                    <!-- Výhoda 1 -->
+                    <div class="feature">
+                        <span class="feature__number">01</span>
+                        <div>
+                            <h3 class="feature__title">Autentický výběr</h3>
+                            <p class="feature__text">
+                                Každý produkt prochází pečlivým výběrem — zařazujeme pouze to,
+                                co skutečně odpovídá duchu dané subkultury. Žádný mainstream,
+                                žádné kompromisy.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Výhoda 2 -->
+                    <div class="feature">
+                        <span class="feature__number">02</span>
+                        <div>
+                            <h3 class="feature__title">Prověřená kvalita</h3>
+                            <p class="feature__text">
+                                Každý produkt testujeme dříve, než ho zařadíme do nabídky.
+                                Spolupracujeme s hudebníky, kteří přesně vědí, co potřebují.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Výhoda 3 -->
+                    <div class="feature">
+                        <span class="feature__number">03</span>
+                        <div>
+                            <h3 class="feature__title">Jsme část scény</h3>
+                            <p class="feature__text">
+                                Nejsme jen obchod — jsme fanoušci. Navštěvujeme festivaly,
+                                hrajeme hudbu a žijeme tím, co prodáváme. Rozumíme tomu.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         PATIČKA — zobrazuje se na všech stránkách
+         Obsahuje: logo, navigaci, kontakt, copyright
+         ===================================================== -->
+    <footer class="footer">
+        <div class="container">
+
+            <!-- Tři sloupce patičky -->
+            <div class="footer__content">
+
+                <!-- Sloupec 1: Logo a slogan -->
+                <div>
+                    <a href="index.html" aria-label="SubKultura — domovská stránka">
+                        <img src="1.jpg" alt="Logo SubKultura" class="footer__logo-img">
+                    </a>
+                    <p class="footer__tagline">Žij hlasitě.</p>
+                </div>
+
+                <!-- Sloupec 2: Navigační odkazy -->
+                <div>
+                    <h3 class="footer__heading">Stránky</h3>
+                    <ul class="footer__links-list">
+                        <li><a href="index.html">Domů</a></li>
+                        <li><a href="o-firme.html">O firmě</a></li>
+                        <li><a href="produkty.html">Produkty</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sloupec 3: Kontaktní informace -->
+                <div>
+                    <h3 class="footer__heading">Kontakt</h3>
+                    <!-- address je sémantický HTML tag pro kontaktní údaje -->
+                    <address class="footer__contact-text">
+                        info@subkultura.cz<br>
+                        +420 777 123 456<br>
+                        Korunní 15, 120 00 Praha 2
+                    </address>
+                </div>
+
+            </div>
+
+            <!-- Vodorovná oddělovací čára -->
+            <hr class="footer__divider">
+
+            <!-- Copyright — povinný text studentského projektu -->
+            <p class="footer__copy">
+                &copy; 2026 SubKultura. Jedná se o fiktivní studentský projekt. SubKultura není reálná firma.
+            </p>
+
+        </div>
+    </footer>
+
+
+    <!-- JavaScript — na konci těla stránky, aby se nejdřív načetlo HTML -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

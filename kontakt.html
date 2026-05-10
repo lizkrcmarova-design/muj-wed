@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <!-- Kódování znaků — VŽDY první tag v <head> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SubKultura — kontaktujte nás. Adresa, telefon, e-mail, otevírací doba a kontaktní formulář.">
+    <title>Kontakt — SubKultura</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ZÁHLAVÍ — stejné na všech stránkách
+         Aktivní odkaz: Kontakt
+         ===================================================== -->
+    <header class="header">
+        <div class="header__inner">
+
+            <a href="index.html" class="header__logo-link" aria-label="SubKultura — zpět na hlavní stránku">
+                <img src="1.jpg" alt="Logo SubKultura" class="header__logo-img">
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Otevřít navigační menu" aria-expanded="false">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+
+            <nav aria-label="Hlavní navigace">
+                <ul class="header__nav-list" id="nav-list">
+                    <li><a href="index.html" class="header__nav-link">Domů</a></li>
+                    <li><a href="o-firme.html" class="header__nav-link">O firmě</a></li>
+                    <li><a href="produkty.html" class="header__nav-link">Produkty</a></li>
+                    <!-- Aktivní odkaz na této stránce: Kontakt -->
+                    <li><a href="kontakt.html" class="header__nav-link header__nav-link--active">Kontakt</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- =====================================================
+             ZÁHLAVÍ STRÁNKY KONTAKT
+             ===================================================== -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-hero__title">Kontakt<span>ujte nás</span></h1>
+                <p class="page-hero__subtitle">
+                    Máte dotaz, připomínku nebo chcete spolupracovat? Ozvěte se nám.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             HLAVNÍ SEKCE KONTAKTU — formulář + informace
+             Dvousloupcový layout: vlevo formulář, vpravo info
+             ===================================================== -->
+        <section class="section">
+            <div class="container">
+
+                <div class="contact-layout">
+
+                    <!-- ===========================================
+                         LEVÝ SLOUPEC: Kontaktní formulář
+                         Formulář je nefunkční — pouze HTML ukázka
+                         =========================================== -->
+                    <div>
+
+                        <div class="section__header">
+                            <h2 class="section__title">Napište <span>nám</span></h2>
+                        </div>
+
+                        <!-- Formulář — action="#" znamená, že se neodešle nikam -->
+                        <form class="contact-form" action="#" method="post" novalidate>
+
+                            <!-- Pole: Jméno -->
+                            <div class="form-group">
+                                <label class="form-label" for="jmeno">Jméno a příjmení</label>
+                                <!-- for="jmeno" propojí label s inputem id="jmeno" -->
+                                <input
+                                    class="form-input"
+                                    type="text"
+                                    id="jmeno"
+                                    name="jmeno"
+                                    placeholder="Jan Novák"
+                                    autocomplete="name"
+                                >
+                            </div>
+
+                            <!-- Pole: E-mail -->
+                            <div class="form-group">
+                                <label class="form-label" for="email">E-mailová adresa</label>
+                                <input
+                                    class="form-input"
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="jan.novak@email.cz"
+                                    autocomplete="email"
+                                >
+                            </div>
+
+                            <!-- Pole: Předmět zprávy -->
+                            <div class="form-group">
+                                <label class="form-label" for="predmet">Předmět</label>
+                                <input
+                                    class="form-input"
+                                    type="text"
+                                    id="predmet"
+                                    name="predmet"
+                                    placeholder="Dotaz k objednávce"
+                                >
+                            </div>
+
+                            <!-- Pole: Zpráva (textarea — víceřádkové pole) -->
+                            <div class="form-group">
+                                <label class="form-label" for="zprava">Zpráva</label>
+                                <textarea
+                                    class="form-textarea"
+                                    id="zprava"
+                                    name="zprava"
+                                    placeholder="Napište nám svůj dotaz nebo vzkaz..."
+                                ></textarea>
+                            </div>
+
+                            <!-- Tlačítko odeslat — type="submit" pro formuláře -->
+                            <div>
+                                <button class="btn btn--primary" type="submit">Odeslat zprávu</button>
+                            </div>
+
+                            <!-- Upozornění, že formulář je nefunkční (studentský projekt) -->
+                            <p class="form-disclaimer">
+                                * Tento formulář je součástí studentského projektu a zprávy se neodesílají.
+                            </p>
+
+                        </form>
+
+                    </div>
+                    <!-- Konec: levý sloupec formuláře -->
+
+
+                    <!-- ===========================================
+                         PRAVÝ SLOUPEC: Kontaktní informace
+                         E-mail, telefon, adresa, otevírací doba
+                         =========================================== -->
+                    <div>
+
+                        <div class="section__header">
+                            <h2 class="section__title">Kontaktní <span>údaje</span></h2>
+                        </div>
+
+                        <!-- E-mail -->
+                        <div class="contact-info__item">
+                            <div>
+                                <p class="contact-info__label">E-mail</p>
+                                <!-- mailto: odkaz otevře e-mailového klienta -->
+                                <address class="contact-info__value">
+                                    <a href="mailto:info@subkultura.cz">info@subkultura.cz</a>
+                                </address>
+                            </div>
+                        </div>
+
+                        <!-- Telefon -->
+                        <div class="contact-info__item">
+                            <div>
+                                <p class="contact-info__label">Telefon</p>
+                                <!-- tel: odkaz umožní volání z mobilního zařízení -->
+                                <address class="contact-info__value">
+                                    <a href="tel:+420777123456">+420 777 123 456</a>
+                                </address>
+                            </div>
+                        </div>
+
+                        <!-- Adresa -->
+                        <div class="contact-info__item">
+                            <div>
+                                <p class="contact-info__label">Adresa</p>
+                                <address class="contact-info__value">
+                                    SubKultura s.r.o.<br>
+                                    Korunní 15<br>
+                                    120 00 Praha 2<br>
+                                    Česká republika
+                                </address>
+                            </div>
+                        </div>
+
+                        <!-- Otevírací doba -->
+                        <div class="contact-info__item">
+                            <div>
+                                <p class="contact-info__label">Otevírací doba</p>
+                                <p class="contact-info__value">
+                                    Pondělí – pátek: 9:00 – 18:00<br>
+                                    Sobota: 10:00 – 15:00<br>
+                                    Neděle: zavřeno
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- IČO a DIČ (realistické pro firmu) -->
+                        <div class="contact-info__item">
+                            <div>
+                                <p class="contact-info__label">Identifikace firmy</p>
+                                <p class="contact-info__value">
+                                    IČO: 12345678<br>
+                                    DIČ: CZ12345678
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Placeholder pro mapu — šedý obdélník s textem -->
+                        <div class="map-placeholder" role="img" aria-label="Mapa — místo zde bude vložena interaktivní mapa">
+                            Mapa — zde bude Google Maps
+                        </div>
+
+                    </div>
+                    <!-- Konec: pravý sloupec s kontaktními info -->
+
+                </div>
+                <!-- Konec: dvousloupcový layout -->
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         PATIČKA — stejná na všech stránkách
+         ===================================================== -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer__content">
+
+                <div>
+                    <a href="index.html" aria-label="SubKultura — domovská stránka">
+                        <img src="1.jpg" alt="Logo SubKultura" class="footer__logo-img">
+                    </a>
+                    <p class="footer__tagline">Žij hlasitě.</p>
+                </div>
+
+                <div>
+                    <h3 class="footer__heading">Stránky</h3>
+                    <ul class="footer__links-list">
+                        <li><a href="index.html">Domů</a></li>
+                        <li><a href="o-firme.html">O firmě</a></li>
+                        <li><a href="produkty.html">Produkty</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__heading">Kontakt</h3>
+                    <address class="footer__contact-text">
+                        info@subkultura.cz<br>
+                        +420 777 123 456<br>
+                        Korunní 15, 120 00 Praha 2
+                    </address>
+                </div>
+
+            </div>
+
+            <hr class="footer__divider">
+
+            <p class="footer__copy">
+                &copy; 2026 SubKultura. Jedná se o fiktivní studentský projekt. SubKultura není reálná firma.
+            </p>
+
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

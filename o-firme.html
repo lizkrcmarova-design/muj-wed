@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <!-- Kódování znaků — VŽDY první tag v <head> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SubKultura — příběh firmy, naše hodnoty a tým lidí za projektem.">
+    <title>O firmě — SubKultura</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ZÁHLAVÍ — stejné na všech stránkách
+         Aktivní odkaz: O firmě
+         ===================================================== -->
+    <header class="header">
+        <div class="header__inner">
+
+            <a href="index.html" class="header__logo-link" aria-label="SubKultura — zpět na hlavní stránku">
+                <img src="1.jpg" alt="Logo SubKultura" class="header__logo-img">
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Otevřít navigační menu" aria-expanded="false">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+
+            <nav aria-label="Hlavní navigace">
+                <ul class="header__nav-list" id="nav-list">
+                    <li><a href="index.html" class="header__nav-link">Domů</a></li>
+                    <!-- Aktivní odkaz na této stránce: O firmě -->
+                    <li><a href="o-firme.html" class="header__nav-link header__nav-link--active">O firmě</a></li>
+                    <li><a href="produkty.html" class="header__nav-link">Produkty</a></li>
+                    <li><a href="kontakt.html" class="header__nav-link">Kontakt</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- =====================================================
+             ZÁHLAVÍ STRÁNKY — název a popis podstránky
+             ===================================================== -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-hero__title">O <span>firmě</span></h1>
+                <p class="page-hero__subtitle">Kdo jsme, odkud jsme přišli a proč to děláme.</p>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             PŘÍBĚH FIRMY — tři odstavce o historii a hodnotách
+             ===================================================== -->
+        <section class="section">
+            <div class="container">
+
+                <div class="section__header">
+                    <h2 class="section__title">Náš <span>příběh</span></h2>
+                </div>
+
+                <!-- Odstavce příběhu — realistický text bez Lorem ipsum -->
+                <div class="about-story">
+
+                    <p>
+                        <strong>SubKultura</strong> vznikla v roce 2021 z frustrace skupiny přátel,
+                        kteří nedokázali najít obchod, jenž by skutečně rozuměl jejich světu.
+                        Pokud jsi fanoušek punk rocku a chceš zároveň koupit správné struny na
+                        telecaster i tričko s estetikou hardcorové scény — většina e-shopů tě
+                        nechá na holičkách. My jsme se rozhodli to změnit.
+                    </p>
+
+                    <p>
+                        Začínali jsme jako malý projekt z pražského squatu, kde jsme sami hráli,
+                        tvořili a přemýšleli, co v nabídce českých obchodů chybí. Dnes sídlíme
+                        ve Vinohrady a nabízíme pečlivě vybraný sortiment pro fanoušky
+                        <strong>punku, rocku, metalu, drum and bassu a techna</strong>.
+                        Každý produkt prošel naším vlastním testem — pokud nám nevyhovuje, do
+                        nabídky ho nezařadíme.
+                    </p>
+
+                    <p>
+                        Nejsme velká korporace. Jsme parta lidí, kteří milují hudbu, scénu
+                        a autentičnost. Chceme, aby SubKultura byla místem, kam se fanoušci
+                        alternativní hudby rádi vrátí — nejen pro zboží, ale protože vědí,
+                        že rozumíme jejich světu.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             TÝM — fiktivní členové firmy
+             Avatar = šedý čtverec s iniciálami (bez fotky)
+             ===================================================== -->
+        <section class="section section--dark">
+            <div class="container">
+
+                <div class="section__header">
+                    <h2 class="section__title">Náš <span>tým</span></h2>
+                    <p class="section__subtitle">
+                        Čtyři lidé, kteří stojí za SubKulturou. Každý z nás přichází
+                        z jiného rohu hudební scény.
+                    </p>
+                </div>
+
+                <!-- Mřížka členů týmu — 4 osoby -->
+                <div class="team-grid">
+
+                    <!-- Člen týmu 1 -->
+                    <article class="team-member">
+                        <!-- Placeholder avatar — šedý čtverec s iniciálami místo fotografie -->
+                        <div class="team-member__avatar" aria-label="Avatar — Tomáš Novák">TN</div>
+                        <h3 class="team-member__name">Tomáš Novák</h3>
+                        <p class="team-member__role">Zakladatel &amp; CEO</p>
+                        <p class="team-member__bio">
+                            Kytarista punkové kapely, zakladatel SubKultury.
+                            Odpovídá za výběr zboží a celkovou vizi projektu.
+                            Metal a punk jsou jeho náboženství.
+                        </p>
+                    </article>
+
+                    <!-- Člen týmu 2 -->
+                    <article class="team-member">
+                        <div class="team-member__avatar" aria-label="Avatar — Klára Horáčková">KH</div>
+                        <h3 class="team-member__name">Klára Horáčková</h3>
+                        <p class="team-member__role">Manažerka e-shopu</p>
+                        <p class="team-member__bio">
+                            Stará se o chod obchodu, zákaznický servis a logistiku.
+                            Ve volném čase DJuje techno na undergroundových parties
+                            po celé České republice.
+                        </p>
+                    </article>
+
+                    <!-- Člen týmu 3 -->
+                    <article class="team-member">
+                        <div class="team-member__avatar" aria-label="Avatar — Marek Šimánek">MS</div>
+                        <h3 class="team-member__name">Marek Šimánek</h3>
+                        <p class="team-member__role">Produktový specialista</p>
+                        <p class="team-member__bio">
+                            Bubeník s desetiletou praxí. Testuje každou paličku
+                            a příslušenství dříve, než ho zařadíme do nabídky.
+                            Fanoušek drum and bassu a progresivního metalu.
+                        </p>
+                    </article>
+
+                    <!-- Člen týmu 4 -->
+                    <article class="team-member">
+                        <div class="team-member__avatar" aria-label="Avatar — Jana Dvořáčková">JD</div>
+                        <h3 class="team-member__name">Jana Dvořáčková</h3>
+                        <p class="team-member__role">Grafická designérka</p>
+                        <p class="team-member__bio">
+                            Navrhuje vizuální identitu SubKultury — od triček až po
+                            web. Čerpá inspiraci z punkového a industriálního designu
+                            70. a 80. let.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             HODNOTY FIRMY — co je pro nás důležité
+             ===================================================== -->
+        <section class="section">
+            <div class="container">
+
+                <div class="section__header">
+                    <h2 class="section__title">Naše <span>hodnoty</span></h2>
+                </div>
+
+                <div class="features__grid">
+
+                    <div class="feature">
+                        <span class="feature__number">01</span>
+                        <div>
+                            <h3 class="feature__title">Autentičnost</h3>
+                            <p class="feature__text">
+                                Nesledujeme trendy — sledujeme scénu. Každý produkt
+                                musí být opravdový a dávat smysl v kontextu dané subkultury.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <span class="feature__number">02</span>
+                        <div>
+                            <h3 class="feature__title">Komunita</h3>
+                            <p class="feature__text">
+                                SubKultura je víc než obchod. Chceme být součástí
+                                hudební komunity — podporovat místní kapely, akce
+                                a DIY kulturu.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <span class="feature__number">03</span>
+                        <div>
+                            <h3 class="feature__title">Kvalita nad kvantitou</h3>
+                            <p class="feature__text">
+                                Raději nabídneme méně produktů, ale každý z nich bude
+                                stát za to. Neplníme katalog zbytečným zbožím jen
+                                proto, aby byl větší.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         PATIČKA — stejná na všech stránkách
+         ===================================================== -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer__content">
+
+                <div>
+                    <a href="index.html" aria-label="SubKultura — domovská stránka">
+                        <img src="1.jpg" alt="Logo SubKultura" class="footer__logo-img">
+                    </a>
+                    <p class="footer__tagline">Žij hlasitě.</p>
+                </div>
+
+                <div>
+                    <h3 class="footer__heading">Stránky</h3>
+                    <ul class="footer__links-list">
+                        <li><a href="index.html">Domů</a></li>
+                        <li><a href="o-firme.html">O firmě</a></li>
+                        <li><a href="produkty.html">Produkty</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__heading">Kontakt</h3>
+                    <address class="footer__contact-text">
+                        info@subkultura.cz<br>
+                        +420 777 123 456<br>
+                        Korunní 15, 120 00 Praha 2
+                    </address>
+                </div>
+
+            </div>
+
+            <hr class="footer__divider">
+
+            <p class="footer__copy">
+                &copy; 2026 SubKultura. Jedná se o fiktivní studentský projekt. SubKultura není reálná firma.
+            </p>
+
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
